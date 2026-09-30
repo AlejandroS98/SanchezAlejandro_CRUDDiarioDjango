@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Nuevo sueño</title>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+
+    <div class="w-full max-w-lg bg-white rounded-2xl shadow-xl p-8">
+
+        <!-- Título -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">
+                Mi diario
+            </h1>
+
+            <p class="text-gray-500 mt-2">
+                Escribe tu sueño o lo que quieras recordar
+            </p>
+        </div>
+
+        <!-- Formulario -->
+        <form method="post" class="space-y-5">
+            {% csrf_token %}
+
+            <div class="[&_p]:mb-5 [&_label]:block [&_label]:text-sm [&_label]:font-semibold [&_label]:text-gray-700 [&_input]:w-full [&_input]:mt-2 [&_input]:px-4 [&_input]:py-3 [&_input]:border [&_input]:border-gray-300 [&_input]:rounded-lg [&_input]:outline-none [&_input]:focus:ring-2 [&_input]:focus:ring-blue-500 [&_select]:w-full [&_select]:mt-2 [&_select]:px-4 [&_select]:py-3 [&_select]:border [&_select]:border-gray-300 [&_select]:rounded-lg [&_select]:outline-none [&_select]:focus:ring-2 [&_select]:focus:ring-blue-500 [&_textarea]:w-full [&_textarea]:mt-2 [&_textarea]:px-4 [&_textarea]:py-3 [&_textarea]:border [&_textarea]:border-gray-300 [&_textarea]:rounded-lg [&_textarea]:outline-none [&_textarea]:focus:ring-2 [&_textarea]:focus:ring-blue-500">
+
+                {{ form.as_p }}
+
+            </div>
+
+            <!-- Botón -->
+            <button
+                type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md hover:shadow-lg"
+            >
+                Guardar
+            </button>
+        </form>
+
+    </div>
+
+</body>
+</html>
